@@ -34,7 +34,7 @@ computer_choice = random.randint(0, len(selection) - 1)
 print(("Welcome to Rock Papers Scissors vs a Computer!\n"
        "What do you choose?"))
 player_choice_str = input("Select 0 for rock, 1 for paper, and 2 for scissors: ")
-if not player_choice_str.isdigit():
+if not player_choice_str.isdigit() or int(player_choice_str) > 2 or int(player_choice_str) < 0:
     print("You ran away. You lose!")
     exit()
 
