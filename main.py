@@ -33,9 +33,13 @@ computer_choice = random.randint(0, len(selection) - 1)
 
 print(("Welcome to Rock Papers Scissors vs a Computer!\n"
        "What do you choose?"))
-player_choice = int(input("Select 0 for rock, 1 for paper, and 2 for scissors: "))
+player_choice_str = input("Select 0 for rock, 1 for paper, and 2 for scissors: ")
+if not player_choice_str.isdigit():
+    print("You ran away. You lose!")
+    exit()
 
-# Precondition: player_choice is 0, 1, or 2
+player_choice = int(player_choice_str)
+
 print(selection[player_choice])
 print(f"Computer chose: \n{selection[computer_choice]}")
 
@@ -51,4 +55,3 @@ else:
     # In all other scenarios, the player wins
     else:
         print("You win!")
-        
